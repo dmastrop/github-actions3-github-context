@@ -10,5 +10,6 @@ jobs:
         #note github.event and not all of the data "github"
         # github.event is wrapped in toJSON function
         # event is nested inside the github object as shown in other yml
-        run: echo "${{ toJSON(github.event.user) }}"
-        run: echo "${{ toJSON(github.event.repository) }}"
+        run: |
+         echo "${{ toJSON(github.event.user) }}"
+         echo "${{ toJSON(github.event.repository) }}"
