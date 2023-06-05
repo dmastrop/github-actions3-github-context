@@ -6,10 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: output the event details from github metadata
-        #run: echo "${{ toJSON(github.event) }}"
+        run: echo "${{ toJSON(github.event) }}"
         #note github.event and not all of the data "github"
         # github.event is wrapped in toJSON function
         # event is nested inside the github object as shown in other yml
-        run: |
-         echo "${{ toJSON(github.event.user) }}"
-         echo "${{ toJSON(github.event.repository) }}"
+        # test multi-line run with user and repository objects
+        #run: |
+        # echo "${{ toJSON(github.event.user) }}"
+        # echo "${{ toJSON(github.event.repository) }}"
