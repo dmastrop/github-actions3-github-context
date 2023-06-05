@@ -1,8 +1,8 @@
 name: Deployment-number1
 #single trigger on push:
-on: push
+#on: push
 #multiple triggers on push or manual trigger.  Can push only on certain branch. Will explore this later.
-#on: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 jobs:
   lint-job:
     runs-on: ubuntu-latest
