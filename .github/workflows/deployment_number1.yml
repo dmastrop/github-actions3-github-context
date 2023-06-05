@@ -14,6 +14,8 @@ jobs:
       - name: run lint
         run: npm run lint
   test-job:
+    needs: lint-job
+    # for sequential execution
     runs-on: ubuntu-latest
     steps:
       - name: Get my code onto runner
@@ -23,6 +25,8 @@ jobs:
       - name: run test
         run: npm run test
   deployment-job:
+    needs: test-job
+    # for sequential execution
     runs-on: ubuntu-latest
     steps:
       - name: Get my code onto runner
